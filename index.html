@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Neo Wave - Portfolio</title>
+    <link rel="shortcut icon" href="logo-neo-wave.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6812ca",
+                        "primary-light": "#8b3fe0",
+                        "primary-dark": "#4a0b94",
+                        "background-light": "#fbfafd",
+                        "background-dark": "#181022",
+                        "accent-blue": "#4FACFE",
+                        "accent-cyan": "#00F2FE",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px" },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(135deg, #fbfafd 0%, #f4effc 100%)',
+                        'text-gradient': 'linear-gradient(90deg, #6812ca 0%, #4FACFE 100%)',
+                        'glass': 'linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .text-gradient-clip {
+            background: linear-gradient(90deg, #6812ca 0%, #4FACFE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light text-[#141118] font-display antialiased overflow-x-hidden selection:bg-primary/20 selection:text-primary">
+    <!-- Sticky Header with Glassmorphism -->
+    <header class="sticky top-0 z-50 w-full glass-card border-b border-white/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 group cursor-pointer">
+                    <div class="w-10 h-10 rounded-xl from-primary to-accent-blue flex items-center justify-center text-white shadow-lg shadow-primary/20 transition-transform group-hover:scale-105"
+                        style="background-color: rgb(0, 0, 69);">
+                        <!-- <span class="material-symbols-outlined text-2xl">rocket_launch</span> -->
+                        <img id="header-logo-img" src="logo-neo-wave.png" alt="NEO WAVE">
+                    </div>
+                    <span
+                        class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-primary transition-colors">NEO
+                        WAVE</span>
+                </div>
+                <!-- Desktop Navigation -->
+                <nav id="header-nav" class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="#">Home</a>
+                    <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+                        href="#">Services</a>
+                    <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+                        href="#">Projects</a>
+                    <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+                        href="#">Pricing</a>
+                    <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="#">Blog</a>
+                    <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+                        href="#">Contact</a>
+                </nav>
+                <!-- CTA Button -->
+                <div class="flex items-center gap-4">
+                    <button id="header-cta-button"
+                        class="hidden sm:flex items-center justify-center h-11 px-6 rounded-full bg-primary hover:bg-primary-light text-white text-sm font-bold shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 active:translate-y-0">
+                        <a id="header-cta-link" href="https://zalo.me/0776114101">Get Started</a>
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="relative w-full overflow-hidden">
+        <!-- Abstract Background Shapes -->
+        <div class="absolute top-0 left-0 w-full h-[800px] overflow-hidden -z-10 pointer-events-none">
+            <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-accent-blue/10 blur-[80px]">
+            </div>
+            <div class="absolute top-[20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-primary/10 blur-[100px]">
+            </div>
+        </div>
+        <!-- Hero Section -->
+        <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <!-- Hero Content -->
+                <div class="flex flex-col gap-8 text-center lg:text-left z-10">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 w-fit mx-auto lg:mx-0 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-accent-blue animate-pulse"></span>
+                        <span id="hero-eyebrow" class="text-xs font-semibold text-slate-600 uppercase tracking-wide">Đang nhận thêm dự án
+                            mới</span>
+                    </div>
+                    <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight text-slate-900">
+                        Thiết Kế Website <br class="hidden lg:block" />
+                        <span class="text-gradient-clip">Chuẩn SEO</span> &amp; Giải Pháp <br class="hidden lg:block" />
+                        Digital Marketing
+                    </h1>
+                    <p id="hero-description" class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Nâng tầm thương hiệu của bạn với các giải pháp công nghệ tiên tiến và chiến lược marketing hiệu
+                        quả. Chúng tôi biến ý tưởng thành hiện thực số.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <button
+                            class="h-12 px-8 rounded-full bg-primary hover:bg-primary-light text-white font-bold shadow-xl shadow-primary/20 transition-all hover:scale-105 flex items-center gap-2">
+
+                            <a id="hero-primary-link" href="https://www.facebook.com/neowavemarketing">Tư vấn miễn phí</a>
+                            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                        </button>
+                        <button
+                            class="h-12 px-8 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-primary/50 hover:text-primary font-semibold transition-all hover:shadow-lg flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">play_circle</span>
+
+                            <a id="hero-secondary-link" href="https://www.tiktok.com/@neo.wave.marketin">Xem dự án</a>
+                        </button>
+                    </div>
+                    <div id="hero-badges"
+                        class="flex items-center justify-center lg:justify-start gap-6 pt-4 text-sm font-medium text-slate-500">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent-blue">check_circle</span>
+                            <span>Support 24/7</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent-blue">check_circle</span>
+                            <span>Tối ưu chi phí</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent-blue">check_circle</span>
+                            <span>Chuẩn SEO Google</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hero Image / Visual -->
+                <div class="relative lg:h-[600px] w-full flex items-center justify-center">
+                    <div class="relative w-full aspect-square max-w-[500px] lg:max-w-none">
+                        <!-- Main Image Container with blob shape -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-primary/5 to-accent-blue/5 rounded-[2rem] transform rotate-3">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-white rounded-[2rem] shadow-2xl border border-slate-100 overflow-hidden transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                            <img id="hero-image" alt="Modern workspace with dashboard analytics on laptop screen"
+                                class="w-full h-full object-cover"
+                                data-alt="Modern workspace with dashboard analytics on laptop screen"
+                                src="../banner-neowave-26-8-26-wb.png" />
+                            <!-- Overlay Gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+                        </div>
+                        <!-- Floating Card 1: Analytics -->
+                        <div
+                            class="absolute -bottom-6 -left-6 glass-card p-4 rounded-xl shadow-xl animate-[bounce_3s_infinite]">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                    <span class="material-symbols-outlined text-sm">trending_up</span>
+                                </div>
+                                <div>
+                                    <p id="hero-stat-label" class="text-xs text-slate-500">Tăng trưởng</p>
+                                    <p id="hero-stat-value" class="text-sm font-bold text-slate-800">+128% Traffic</p>
+                                </div>
+                            </div>
+                            <div class="h-1 w-24 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[70%]"></div>
+                            </div>
+                        </div>
+                        <!-- Floating Card 2: Satisfied Clients -->
+                        <div
+                            class="absolute top-10 -right-4 glass-card p-3 rounded-xl shadow-xl flex items-center gap-3 animate-[pulse_4s_infinite]">
+                            <div class="flex -space-x-2">
+                                <img alt="Client Avatar 1" class="w-8 h-8 rounded-full border-2 border-white"
+                                    data-alt="Portrait of a smiling woman" src="kh-1.jpeg" />
+                                <img alt="Client Avatar 2" class="w-8 h-8 rounded-full border-2 border-white"
+                                    data-alt="Portrait of a serious man" src="kh-2.jpeg" />
+                                <img alt="Client Avatar 3" class="w-8 h-8 rounded-full border-2 border-white"
+                                    data-alt="Portrait of a smiling man" src="kh-3.jpeg" />
+                            </div>
+                            <div class="text-xs font-bold text-primary">1k+ Clients</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <section class="py-20 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+                    <div class="max-w-2xl">
+                        <span id="services-eyebrow" class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Dịch vụ của
+                            chúng tôi</span>
+                        <h2 id="services-title" class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+                            Giải pháp toàn diện giúp doanh nghiệp <br />
+                            phát triển mạnh mẽ trên nền tảng số.
+                        </h2>
+                    </div>
+                    <button id="services-viewall-desktop" class="hidden md:flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+                        <span class="services-viewall-text">Xem tất cả dịch vụ</span>
+                        <span class="material-symbols-outlined">arrow_right_alt</span>
+                    </button>
+                </div>
+                <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1: Website Design -->
+                    <div
+                        class="group relative bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border border-slate-100 hover:border-primary/20 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 group-hover:bg-primary/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-xl bg-white shadow-md flex items-center justify-center text-primary mb-6 relative z-10 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">language</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors">
+                            Thiết kế Website</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Website chuẩn SEO, tốc độ cao, giao diện hiện
+                            đại, tối ưu trải nghiệm người dùng trên mọi thiết bị.</p>
+                        <a class="inline-flex items-center text-sm font-bold text-slate-900 group-hover:text-primary transition-colors"
+                            href="#">
+                            Xem chi tiết <span
+                                class="material-symbols-outlined text-lg ml-1 group-hover:ml-2 transition-all">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Service Card 2: SEO -->
+                    <div
+                        class="group relative bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border border-slate-100 hover:border-primary/20 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-accent-blue/5 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 group-hover:bg-accent-blue/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-xl bg-white shadow-md flex items-center justify-center text-accent-blue mb-6 relative z-10 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">search</span>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-slate-900 mb-3 group-hover:text-accent-blue transition-colors">
+                            SEO Marketing</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Tối ưu hóa công cụ tìm kiếm, đưa từ khóa lên top
+                            Google bền vững, gia tăng lượng truy cập tự nhiên.</p>
+                        <a class="inline-flex items-center text-sm font-bold text-slate-900 group-hover:text-accent-blue transition-colors"
+                            href="#">
+                            Xem chi tiết <span
+                                class="material-symbols-outlined text-lg ml-1 group-hover:ml-2 transition-all">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Service Card 3: Google Ads -->
+                    <div
+                        class="group relative bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border border-slate-100 hover:border-primary/20 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-orange-400/5 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 group-hover:bg-orange-400/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-xl bg-white shadow-md flex items-center justify-center text-orange-500 mb-6 relative z-10 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">ads_click</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">
+                            Quảng cáo Google</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Chạy quảng cáo Google Ads tối ưu chi phí chuyển
+                            đổi, tiếp cận khách hàng tiềm năng ngay lập tức.</p>
+                        <a class="inline-flex items-center text-sm font-bold text-slate-900 group-hover:text-orange-500 transition-colors"
+                            href="#">
+                            Xem chi tiết <span
+                                class="material-symbols-outlined text-lg ml-1 group-hover:ml-2 transition-all">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Service Card 4: Social Media -->
+                    <div
+                        class="group relative bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border border-slate-100 hover:border-primary/20 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-pink-500/5 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 group-hover:bg-pink-500/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-xl bg-white shadow-md flex items-center justify-center text-pink-500 mb-6 relative z-10 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">share</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-pink-500 transition-colors">
+                            Social Media</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Quản trị và phát triển fanpage chuyên nghiệp, xây
+                            dựng cộng đồng và tương tác khách hàng hiệu quả.</p>
+                        <a class="inline-flex items-center text-sm font-bold text-slate-900 group-hover:text-pink-500 transition-colors"
+                            href="#">
+                            Xem chi tiết <span
+                                class="material-symbols-outlined text-lg ml-1 group-hover:ml-2 transition-all">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Service Card 5: Content Marketing -->
+                    <div
+                        class="group relative bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border border-slate-100 hover:border-primary/20 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 group-hover:bg-purple-500/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-xl bg-white shadow-md flex items-center justify-center text-purple-600 mb-6 relative z-10 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">edit_note</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
+                            Content Marketing</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Sáng tạo nội dung chất lượng, thu hút khách hàng,
+                            kể câu chuyện thương hiệu đầy cảm xúc.</p>
+                        <a class="inline-flex items-center text-sm font-bold text-slate-900 group-hover:text-purple-600 transition-colors"
+                            href="#">
+                            Xem chi tiết <span
+                                class="material-symbols-outlined text-lg ml-1 group-hover:ml-2 transition-all">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Service Card 6: Branding -->
+                    <div
+                        class="group relative bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border border-slate-100 hover:border-primary/20 overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 group-hover:bg-yellow-500/10">
+                        </div>
+                        <div
+                            class="w-14 h-14 rounded-xl bg-white shadow-md flex items-center justify-center text-yellow-600 mb-6 relative z-10 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">star</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-yellow-600 transition-colors">
+                            Branding</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">Xây dựng bộ nhận diện thương hiệu độc đáo, logo,
+                            ấn phẩm truyền thông chuyên nghiệp.</p>
+                        <a class="inline-flex items-center text-sm font-bold text-slate-900 group-hover:text-yellow-600 transition-colors"
+                            href="#">
+                            Xem chi tiết <span
+                                class="material-symbols-outlined text-lg ml-1 group-hover:ml-2 transition-all">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 text-center md:hidden">
+                    <button id="services-viewall-mobile"
+                        class="w-full h-12 rounded-xl border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-colors">
+                        <span class="services-viewall-text">Xem tất cả dịch vụ</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Stats Section -->
+        <section class="py-16 bg-background-light border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="stats-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary to-accent-blue mb-2">
+                            500+</div>
+                        <div class="text-sm lg:text-base font-medium text-slate-600">Dự án hoàn thành</div>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary to-accent-blue mb-2">
+                            98%</div>
+                        <div class="text-sm lg:text-base font-medium text-slate-600">Khách hàng hài lòng</div>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary to-accent-blue mb-2">
+                            3+</div>
+                        <div class="text-sm lg:text-base font-medium text-slate-600">Năm kinh nghiệm</div>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary to-accent-blue mb-2">
+                            24/7</div>
+                        <div class="text-sm lg:text-base font-medium text-slate-600">Hỗ trợ kỹ thuật</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8">
+            <div
+                class="max-w-7xl mx-auto relative rounded-3xl overflow-hidden bg-primary px-6 py-16 md:px-16 md:py-20 text-center">
+                <!-- Background Pattern -->
+                <div class="absolute inset-0 opacity-20">
+                    <svg class="h-full w-full text-white" fill="currentColor">
+                        <pattern height="40" id="pattern-circles" patternunits="userSpaceOnUse" width="40" x="0" y="0">
+                            <circle cx="2" cy="2" r="2"></circle>
+                        </pattern>
+                        <rect fill="url(#pattern-circles)" height="100%" width="100%"></rect>
+                    </svg>
+                </div>
+                <div class="relative z-10">
+                    <h2 id="cta-title" class="text-3xl md:text-5xl font-bold text-white mb-6">Sẵn sàng bứt phá doanh số?</h2>
+                    <p id="cta-description" class="text-primary-100 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+                        Liên hệ ngay với chúng tôi để nhận tư vấn chiến lược Digital Marketing miễn phí cho doanh nghiệp
+                        của bạn.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button
+                            class="bg-white text-primary hover:bg-slate-50 font-bold py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105">
+
+                            <a id="cta-primary-link" href="https://zalo.me/0776114101">Bắt đầu ngay</a>
+                        </button>
+                        <button
+                            class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-8 rounded-full transition-colors">
+
+                            <a id="cta-secondary-link" href="https://www.facebook.com/neowavemarketing">Liên hệ tư vấn</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Workflow Timeline -->
+        <section class="w-full bg-white dark:bg-background-dark py-20">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span id="workflow-eyebrow" class="text-primary font-bold tracking-wider text-sm uppercase">QUY TRÌNH CỦA CHÚNG TÔI</span>
+                    <h2 id="workflow-title" class="text-3xl md:text-4xl font-bold mt-2">Từ ý tưởng đến khi ra mắt sản phẩm</h2>
+                </div>
+                <div class="relative">
+                    <!-- Connecting Line (Desktop) -->
+                    <div
+                        class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 dark:bg-slate-700 -translate-y-1/2 z-0">
+                    </div>
+                    <div id="workflow-steps" class="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div
+                                class="size-16 rounded-full bg-white dark:bg-background-dark border-2 border-primary text-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform mb-6">
+                                <span class="material-symbols-outlined text-3xl">lightbulb</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">1. Consulting</h3>
+                            <p class="text-sm text-text-muted dark:text-slate-400">Khám phá &amp; xây dựng chiến lược.
+                            </p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div
+                                class="size-16 rounded-full bg-white dark:bg-background-dark border-2 border-slate-200 dark:border-slate-700 text-text-muted group-hover:border-primary group-hover:text-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-all mb-6">
+                                <span class="material-symbols-outlined text-3xl">brush</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">2. UI/UX Design</h3>
+                            <p class="text-sm text-text-muted dark:text-slate-400">Thiết kế khung sườn &amp; tạo mẫu
+                                trực quan.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div
+                                class="size-16 rounded-full bg-white dark:bg-background-dark border-2 border-slate-200 dark:border-slate-700 text-text-muted group-hover:border-primary group-hover:text-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-all mb-6">
+                                <span class="material-symbols-outlined text-3xl">code</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">3. Development</h3>
+                            <p class="text-sm text-text-muted dark:text-slate-400">Lập trình sạch &amp; tích hợp CMS.
+                            </p>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div
+                                class="size-16 rounded-full bg-white dark:bg-background-dark border-2 border-slate-200 dark:border-slate-700 text-text-muted group-hover:border-primary group-hover:text-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-all mb-6">
+                                <span class="material-symbols-outlined text-3xl">bug_report</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">4. Testing</h3>
+                            <p class="text-sm text-text-muted dark:text-slate-400">Kiểm thử chất lượng &amp; xác thực
+                                trên nhiều thiết bị.
+                            </p>
+                        </div>
+                        <!-- Step 5 -->
+                        <div class="flex flex-col items-center text-center group">
+                            <div
+                                class="size-16 rounded-full bg-white dark:bg-background-dark border-2 border-slate-200 dark:border-slate-700 text-text-muted group-hover:border-primary group-hover:text-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-all mb-6">
+                                <span class="material-symbols-outlined text-3xl">rocket</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">5. Launch</h3>
+                            <p class="text-sm text-text-muted dark:text-slate-400">Hỗ trợ triển khai &amp; sau khi ra
+                                mắt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pricing Section -->
+        <section class="w-full bg-background-light dark:bg-[#130c1c] py-20 px-6">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="text-center mb-16">
+                    <h2 id="pricing-title" class="text-3xl md:text-5xl font-bold mb-4">Giá cả minh bạch</h2>
+                    <p id="pricing-description" class="text-text-muted dark:text-slate-400">Hãy chọn gói dịch vụ hoàn hảo cho quá trình chuyển
+                        đổi số của bạn.</p>
+                </div>
+                <div id="pricing-plans" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <!-- Starter Plan -->
+                    <div
+                        class="bg-white dark:bg-background-dark rounded-2xl p-8 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all hover:shadow-xl">
+                        <h3 class="text-xl font-bold mb-2">Starter</h3>
+                        <div class="flex items-baseline gap-1 mb-6">
+                            <span class="text-4xl font-bold">7.000.000đ</span>
+                            <span class="text-text-muted text-sm">/dự án</span>
+                        </div>
+                        <p class="text-text-muted text-sm mb-6">Hoàn hảo cho các doanh nghiệp nhỏ muốn thiết lập sự hiện
+                            diện trực tuyến.</p>
+                        <button
+                            class="w-full py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-bold hover:border-primary hover:text-primary transition-colors mb-8">
+
+                            <a href="https://zalo.me/0776114101">Chọn gói dịch vụ</a>
+                        </button>
+                        <ul class="flex flex-col gap-4 text-sm">
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                <span>Thiết kế giao diện bản quyền</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                <span>Tương thích các thiết bị Máy tính bảng, Điện thoại thông minh.</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                <span>Cài đặt SEO cơ bản</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-400">
+                                <span class="material-symbols-outlined text-lg">cancel</span>
+                                <span>Giỏ hàng thương mại</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Business Plan (Highlighted) -->
+                    <div
+                        class="bg-white dark:bg-background-dark rounded-2xl p-8 border-2 border-primary relative shadow-2xl scale-105 z-10">
+                        <div
+                            class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-lg">
+                            PHỔ BIẾN</div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Business</h3>
+                        <div class="flex items-baseline gap-1 mb-6">
+                            <span class="text-4xl font-bold">10.000.000đ</span>
+                            <span class="text-text-muted text-sm">/dự án</span>
+                        </div>
+                        <p class="text-text-muted text-sm mb-6">Giải pháp toàn diện dành cho các công ty đang phát triển
+                            cần mở rộng quy mô.</p>
+                        <button
+                            class="w-full py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary-dark transition-colors mb-8 shadow-lg shadow-primary/25">
+                            <a href="https://zalo.me/0776114101">Chọn gói dịch vụ</a>
+                        </button>
+                        <ul class="flex flex-col gap-4 text-sm">
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                <span>Giỏ hàng thương mại</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                <span>Đăng nhập/Đăng ký</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                <span>Tạo mã giảm giá sản phẩm</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                <span>Tính năng gửi ý sản phẩm</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Premium Plan -->
+                    <div
+                        class="bg-white dark:bg-background-dark rounded-2xl p-8 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all hover:shadow-xl">
+                        <h3 class="text-xl font-bold mb-2">Premium</h3>
+                        <div class="flex items-baseline gap-1 mb-6">
+                            <span class="text-4xl font-bold">GIÁ LIÊN HỆ</span>
+                            <span class="text-text-muted text-sm">/dự án</span>
+                        </div>
+                        <p class="text-text-muted text-sm mb-6">Phát triển phần mềm cấp doanh nghiệp đáp ứng các yêu cầu
+                            phức tạp.</p>
+                        <button
+                            class="w-full py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-bold hover:border-primary hover:text-primary transition-colors mb-8">
+                            <a href="https://zalo.me/0776114101">Chọn gói dịch vụ</a>
+                        </button>
+                        <ul class="flex flex-col gap-4 text-sm">
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                <span>Form đặt tour du lịch</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                <span>Danh mục yêu thích, Tìm kiếm gợi ý</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                <span>Tuỳ chỉnh giám giá cho từng thành viên</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                <span>Các tính năng nâng cao & lập trình theo yêu cầu</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Column -->
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-2 text-text-main dark:text-white mb-2">
+                        <!-- <span class="material-symbols-outlined text-3xl text-primary">token</span> -->
+                        <img src="logo-neo-wave.png" alt="Neo Wave - Tùng" class="w-10">
+                        <span class="text-xl font-bold">NEO WAVE</span>
+                    </div>
+                    <p id="footer-description" class="text-text-muted dark:text-slate-400 text-sm leading-relaxed">
+
+                        Chuyên gia Marketing Online | Website - Facebook - TikTok - AI - Phần Mềm Bán Hàng - ERP - HRM -
+                        PM Kế Toán ... <br>
+                        📞 0776 114 101 | 📞 0774 827 890
+                    </p>
+                </div>
+                <!-- Footer link columns (columns[0], columns[1]) -->
+                <div id="footer-columns" class="contents">
+                <!-- Links Column -->
+                <div class="flex flex-col gap-4" data-footer-column="0">
+                    <h4 class="font-bold text-lg mb-2" data-footer-col-title>Company</h4>
+                    <a class="text-text-muted dark:text-slate-400 hover:text-primary text-sm transition-colors"
+                        href="#">About Us</a>
+                    <a class="text-text-muted dark:text-slate-400 hover:text-primary text-sm transition-colors"
+                        href="#">Careers</a>
+                    <a class="text-text-muted dark:text-slate-400 hover:text-primary text-sm transition-colors"
+                        href="#">Blog</a>
+                    <a class="text-text-muted dark:text-slate-400 hover:text-primary text-sm transition-colors"
+                        href="#">Legal</a>
+                </div>
+                <!-- Services Column -->
+                <div class="flex flex-col gap-4" data-footer-column="1">
+                    <h4 class="font-bold text-lg mb-2" data-footer-col-title>Services</h4>
+                    <a class="text-text-muted dark:text-slate-400 hover:text-primary text-sm transition-colors"
+                        href="#">Web Design</a>
+                    <a class="text-text-muted dark:text-slate-400 hover:text-primary text-sm transition-colors"
+                        href="#">Development</a>
+                    <a class="text-text-muted dark:text-slate-400 hover:text-primary text-sm transition-colors"
+                        href="#">SEO Marketing</a>
+                    <a class="text-text-muted dark:text-slate-400 hover:text-primary text-sm transition-colors"
+                        href="#">Branding</a>
+                </div>
+                </div>
+                <!-- Contact Column -->
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-bold text-lg mb-2">Get in Touch</h4>
+                    <div class="flex items-center gap-3 text-text-muted dark:text-slate-400 text-sm">
+                        <span class="material-symbols-outlined text-primary">location_on</span>
+                        <span id="footer-address">P. Hiệp Thành, Quận 12, TP Hồ Chí Minh</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-text-muted dark:text-slate-400 text-sm">
+                        <span class="material-symbols-outlined text-primary">mail</span>
+                        <span id="footer-email">quoctung.work@gmail.com</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-text-muted dark:text-slate-400 text-sm">
+                        <span class="material-symbols-outlined text-primary">call</span>
+                        <span id="footer-phone">+84 776 114 101</span>
+                    </div>
+                    <div id="footer-social-links" class="flex gap-4 mt-4">
+                        <!-- Social Icons -->
+                        <a class="size-10 rounded-full bg-background-light dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                            href="https://www.facebook.com/neowavemarketing">
+                            <span class="text-xs font-bold">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </span>
+                        </a>
+                        <a class="size-10 rounded-full bg-background-light dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                            href="https://www.tiktok.com/@neo.wave.marketin">
+                            <span class="text-xs font-bold"><i class="fa-brands fa-tiktok"></i></span>
+                        </a>
+                        <a class="size-10 rounded-full bg-background-light dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                            href="mailto:quoctung.work@gmail.com">
+                            <span class="text-xs font-bold"><i class="fa-solid fa-envelope"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p id="footer-copyright" class="text-text-muted dark:text-slate-500 text-sm">© 2026 NEO WAVE. All rights reserved.</p>
+                <div id="footer-legal-links" class="flex gap-6">
+                    <a class="text-xs text-text-muted dark:text-slate-500 hover:text-primary" href="#">Privacy
+                        Policy</a>
+                    <a class="text-xs text-text-muted dark:text-slate-500 hover:text-primary" href="#">Terms of
+                        Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ Floating Contact Stack (Minimal Stack) ============ -->
+    <div class="fixed bottom-6 right-4 sm:right-6 z-50 flex flex-col items-end gap-3">
+
+        <!-- Expanded quick-contact links -->
+        <div id="contact-links"
+            class="flex flex-col items-end gap-3 origin-bottom-right scale-95 opacity-0 pointer-events-none translate-y-2 transition-all duration-300 ease-out">
+
+            <a href="tel:+84776114101" class="contact-pill" aria-label="Gọi ngay">
+                <span class="contact-pill__icon bg-emerald-500">
+                    <span class="material-symbols-outlined text-[20px]">call</span>
+                </span>
+                <span>Gọi ngay</span>
+            </a>
+
+            <a href="https://zalo.me/0776114101" target="_blank" rel="noopener" class="contact-pill"
+                aria-label="Liên hệ qua Zalo">
+                <span
+                    class="contact-pill__icon bg-[#0068FF] rounded-xl font-display font-bold text-[11px] tracking-tight">
+                    Zalo
+                </span>
+                <span>Zalo</span>
+            </a>
+
+            <a href="https://m.me/neowavemarketing" target="_blank" rel="noopener" class="contact-pill"
+                aria-label="Nhắn tin Messenger">
+                <span class="contact-pill__icon"
+                    style="background: linear-gradient(135deg,#00B2FF 0%,#006AFF 50%,#B620E0 100%);">
+                    <i class="fa-brands fa-facebook-messenger text-[16px]"></i>
+                </span>
+                <span>Messenger</span>
+            </a>
+
+            <a href="mailto:quoctung.work@gmail.com" class="contact-pill" aria-label="Gửi email">
+                <span class="contact-pill__icon bg-gradient-to-br from-orange-400 to-red-500">
+                    <span class="material-symbols-outlined text-[20px]">mail</span>
+                </span>
+                <span>Email</span>
+            </a>
+        </div>
+
+        <!-- Toggle button -->
+        <button id="contact-toggle" type="button" aria-expanded="false" aria-label="Mở liên hệ nhanh"
+            class="relative w-14 h-14 rounded-full text-white shadow-xl shadow-primary-dark/30 flex items-center justify-center transition-transform duration-300 hover:scale-105 active:scale-95"
+            style="background-color: rgb(0, 0, 69);">
+            <span id="contact-icon-dots"
+                class="material-symbols-outlined text-2xl transition-all duration-200">more_horiz</span>
+            <span id="contact-icon-close"
+                class="material-symbols-outlined text-2xl absolute transition-all duration-200 opacity-0 scale-50">close</span>
+            <span class="absolute inset-0 rounded-full animate-ping bg-primary/30 -z-10"></span>
+        </button>
+    </div>
+
+    <!-- ============ Back to top ============ -->
+    <button id="back-to-top" type="button" aria-label="Lên đầu trang"
+        class="fixed bottom-6 left-4 sm:left-6 z-50 w-12 h-12 rounded-full bg-white text-primary border border-slate-200 shadow-lg flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <style>
+        .contact-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 18px 6px 6px;
+            border-radius: 999px;
+            background: #ffffff;
+            box-shadow: 0 10px 24px -8px rgba(24, 16, 34, 0.22);
+            border: 1px solid rgba(148, 132, 178, 0.14);
+            font-size: 14px;
+            font-weight: 600;
+            color: #201a2b;
+            white-space: nowrap;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .contact-pill:hover {
+            transform: translateX(-2px);
+            box-shadow: 0 14px 28px -8px rgba(24, 16, 34, 0.3);
+        }
+
+        .contact-pill__icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            flex: none;
+        }
+
+        #contact-toggle[aria-expanded="true"] #contact-icon-dots {
+            opacity: 0;
+            transform: scale(0.5) rotate(45deg);
+        }
+
+        #contact-toggle[aria-expanded="true"] #contact-icon-close {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        #contact-links.is-open {
+            transform: none;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .contact-pill,
+            #contact-toggle,
+            #contact-icon-dots,
+            #contact-icon-close,
+            #contact-links,
+            #back-to-top {
+                transition: none;
+                animation: none;
+            }
+        }
+    </style>
+
+    <script>
+            // ---- Minimal Stack: floating quick-contact widget ----
+            (function () {
+                const toggleBtn = document.getElementById("contact-toggle");
+                const linksPanel = document.getElementById("contact-links");
+
+                const closeStack = () => {
+                    toggleBtn.setAttribute("aria-expanded", "false");
+                    toggleBtn.setAttribute("aria-label", "Mở liên hệ nhanh");
+                    linksPanel.classList.remove("is-open", "scale-100", "opacity-100", "translate-y-0");
+                    linksPanel.classList.add("scale-95", "opacity-0", "translate-y-2", "pointer-events-none");
+                };
+                const openStack = () => {
+                    toggleBtn.setAttribute("aria-expanded", "true");
+                    toggleBtn.setAttribute("aria-label", "Đóng liên hệ nhanh");
+                    linksPanel.classList.add("is-open", "scale-100", "opacity-100", "translate-y-0");
+                    linksPanel.classList.remove("scale-95", "opacity-0", "translate-y-2", "pointer-events-none");
+                };
+
+                toggleBtn.addEventListener("click", () => {
+                    const isOpen = toggleBtn.getAttribute("aria-expanded") === "true";
+                    isOpen ? closeStack() : openStack();
+                });
+
+                // close when clicking outside the widget
+                document.addEventListener("click", (e) => {
+                    if (!e.target.closest("#contact-toggle") && !e.target.closest("#contact-links")) {
+                        closeStack();
+                    }
+                });
+                // close on Escape
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Escape") closeStack();
+                });
+            })();
+
+        // ---- Back to top ----
+        (function () {
+            const backToTop = document.getElementById("back-to-top");
+            const toggleVisibility = () => {
+                const show = window.scrollY > 400;
+                backToTop.classList.toggle("opacity-0", !show);
+                backToTop.classList.toggle("pointer-events-none", !show);
+                backToTop.classList.toggle("translate-y-2", !show);
+                backToTop.classList.toggle("opacity-100", show);
+                backToTop.classList.toggle("translate-y-0", show);
+            };
+            window.addEventListener("scroll", toggleVisibility, { passive: true });
+            toggleVisibility();
+
+            backToTop.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        })();
+    </script>
+
+    <!-- Nạp nội dung động từ CMS (Firestore). Nếu section chưa được lưu
+         trong admin-cms (chưa bấm "Lưu thay đổi"), toàn bộ nội dung tĩnh ở
+         trên vẫn giữ nguyên y như cũ — script này chỉ GHI ĐÈ khi có dữ liệu. -->
+    <script type="module" src="./js/site-loader.js"></script>
+</body>
+
+</html>

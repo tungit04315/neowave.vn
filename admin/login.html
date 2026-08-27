@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng nhập — NEO WAVE CMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="./css/admin.css" />
+</head>
+
+<body>
+
+  <div class="login-page">
+    <div class="login-dots login-dots--tl" aria-hidden="true"></div>
+    <div class="login-dots login-dots--br" aria-hidden="true"></div>
+    <div class="login-blob" aria-hidden="true"></div>
+
+    <svg class="login-wave" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="currentColor" d="M0,140 C240,220 480,60 720,110 C960,160 1200,240 1440,150 L1440,260 L0,260 Z" />
+    </svg>
+
+    <div class="login-shell">
+
+      <!-- ============ LEFT SHOWCASE PANEL (lg and up) ============ -->
+      <div class="login-showcase">
+        <svg class="login-showcase__wave" viewBox="0 0 500 260" preserveAspectRatio="none" aria-hidden="true">
+          <path fill="currentColor" d="M0,150 C120,90 200,210 320,150 C400,110 460,180 500,140 L500,260 L0,260 Z" />
+        </svg>
+
+        <div style="position:relative; z-index:1;">
+          <div class="flex items-center gap-2 mb-10">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold font-display"
+              style="background:linear-gradient(135deg,#7b2ff0,#4f16b0);">N</div>
+            <div>
+              <p class="font-display font-bold text-slate-900 leading-none">NEO WAVE</p>
+              <p class="text-[10px] text-slate-400 tracking-wider">CMS</p>
+            </div>
+          </div>
+
+          <div class="showcase-copy">
+            <h2>Chào mừng bạn trở lại!</h2>
+            <p>Đăng nhập để tiếp tục quản lý hệ thống và kiểm soát nội dung hiệu quả.</p>
+          </div>
+        </div>
+
+        <!-- dashboard mock illustration -->
+        <div class="dash-mock" style="position:relative; z-index:1;">
+          <div class="dash-mock__floater" aria-hidden="true"></div>
+          <svg viewBox="0 0 340 220" width="100%" role="img" aria-label="Minh hoạ bảng điều khiển">
+            <rect x="0" y="0" width="340" height="220" rx="18" fill="#ffffff" />
+            <rect x="0" y="0" width="340" height="220" rx="18" fill="none" stroke="#ece7f7" stroke-width="1" />
+            <rect x="14" y="16" width="8" height="188" rx="4" fill="#6812ca" />
+            <circle cx="300" cy="26" r="4" fill="#e4dff2" />
+            <circle cx="315" cy="26" r="4" fill="#e4dff2" />
+
+            <rect x="38" y="22" width="150" height="88" rx="12" fill="#f6f3fc" />
+            <polyline points="48,84 70,64 92,76 114,48 136,58 158,40 172,52" fill="none" stroke="#6812ca"
+              stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+            <rect x="200" y="22" width="60" height="42" rx="10" fill="#f6f3fc" />
+            <text x="210" y="49" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700"
+              fill="#2b2540">2,540</text>
+
+            <rect x="270" y="22" width="55" height="42" rx="10" fill="#f6f3fc" />
+            <text x="278" y="49" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700"
+              fill="#2b2540">1,230</text>
+
+            <rect x="200" y="72" width="60" height="38" rx="10" fill="#f6f3fc" />
+            <text x="210" y="96" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="700"
+              fill="#2b2540">2,540</text>
+
+            <circle cx="298" cy="90" r="20" fill="none" stroke="#e4dff2" stroke-width="10" />
+            <path d="M298 70 A20 20 0 0 1 314 100" fill="none" stroke="#6812ca" stroke-width="10"
+              stroke-linecap="round" />
+
+            <rect x="38" y="122" width="287" height="80" rx="12" fill="#f6f3fc" />
+            <rect x="52" y="138" width="70" height="8" rx="4" fill="#d9d0ec" />
+            <rect x="52" y="154" width="110" height="6" rx="3" fill="#e6e0f3" />
+            <rect x="52" y="168" width="90" height="6" rx="3" fill="#e6e0f3" />
+          </svg>
+        </div>
+
+        <div class="security-badge" style="position:relative; z-index:1;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" />
+            <path d="M9 12l2 2 4-4" />
+          </svg>
+          Bảo mật &amp; An toàn dữ liệu
+        </div>
+      </div>
+
+      <!-- ============ RIGHT FORM PANEL ============ -->
+      <div class="login-formside">
+        <div class="login-form-inner">
+
+          <div class="brand-badge">
+            <span class="text-white font-bold font-display text-lg">N</span>
+          </div>
+
+          <h1 class="font-display font-bold text-slate-900 text-xl text-center mb-1">Đăng nhập quản trị</h1>
+          <p class="text-sm text-slate-500 text-center mb-7">Dùng tài khoản Admin đã được cấp quyền</p>
+
+          <form id="login-form" class="space-y-4" novalidate>
+            <div>
+              <label for="email-input" class="field-label">Email</label>
+              <div class="field-input-wrap">
+                <svg class="field-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="3" />
+                  <path d="M2 7l10 6 10-6" />
+                </svg>
+                <input id="email-input" type="email" required autocomplete="username"
+                  placeholder="Nhập email quản trị" />
+              </div>
+            </div>
+
+            <div>
+              <label for="password-input" class="field-label">Mật khẩu</label>
+              <div class="field-input-wrap">
+                <svg class="field-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="10" width="16" height="10" rx="2.5" />
+                  <path d="M7.5 10V7a4.5 4.5 0 0 1 9 0v3" />
+                </svg>
+                <input id="password-input" type="password" required autocomplete="current-password"
+                  placeholder="Nhập mật khẩu" data-has-toggle="true" />
+                <button type="button" class="field-toggle" id="toggle-password" aria-label="Hiện mật khẩu"
+                  aria-pressed="false">
+                  <svg id="eye-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <p id="error-message" class="text-sm text-red-500 hidden" role="alert"></p>
+
+            <div class="remember-row">
+              <label>
+                <input type="checkbox" id="remember-me" checked />
+                Ghi nhớ phiên đăng nhập
+              </label>
+              <a href="#">Quên mật khẩu?</a>
+            </div>
+
+            <button type="submit" class="btn-primary-gradient">
+              Đăng nhập
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="M13 6l6 6-6 6" />
+              </svg>
+            </button>
+          </form>
+
+          <div class="login-divider">hoặc</div>
+
+          <button type="button" class="btn-secondary-outline" id="secure-login-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" />
+            </svg>
+            Đăng nhập an toàn
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Toggle password visibility (purely presentational, does not affect auth flow)
+    const pwdInput = document.getElementById("password-input");
+    const toggleBtn = document.getElementById("toggle-password");
+    toggleBtn.addEventListener("click", () => {
+      const isPassword = pwdInput.type === "password";
+      pwdInput.type = isPassword ? "text" : "password";
+      toggleBtn.setAttribute("aria-pressed", String(isPassword));
+      toggleBtn.setAttribute("aria-label", isPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu");
+    });
+  </script>
+
+  <script type="module">
+    import { login } from "./js/auth-guard.js";
+
+    const form = document.getElementById("login-form");
+    const errorEl = document.getElementById("error-message");
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorEl.classList.add("hidden");
+      const email = document.getElementById("email-input").value;
+      const password = document.getElementById("password-input").value;
+
+      submitBtn.disabled = true;
+      const originalLabel = submitBtn.innerHTML;
+      submitBtn.textContent = "Đang đăng nhập...";
+
+      try {
+        await login(email, password);
+        window.location.href = "./index.html";
+      } catch (err) {
+        errorEl.textContent = "Sai email hoặc mật khẩu. Vui lòng thử lại.";
+        errorEl.classList.remove("hidden");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalLabel;
+      }
+    });
+  </script>
+</body>
+
+</html>

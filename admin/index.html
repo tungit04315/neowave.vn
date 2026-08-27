@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — NEO WAVE CMS</title>
+<link rel="shortcut icon" href="logo-neo-wave.png" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/tabler-icons.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./js/tailwind-config.js"></script>
+<link rel="stylesheet" href="./css/admin.css" />
+</head>
+<body class="bg-background-light font-body text-slate-800">
+
+  <div class="flex h-screen overflow-hidden">
+    <aside class="w-64 border-r border-slate-100 bg-white p-4 overflow-y-auto">
+      <div id="sidebar"></div>
+    </aside>
+
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <header class="h-16 border-b border-slate-100 bg-white flex items-center justify-between px-6">
+        <div>
+          <p class="text-sm text-slate-400">Xin chào,</p>
+          <p class="font-display font-medium text-slate-900" id="user-email">—</p>
+        </div>
+        <button id="logout-btn" class="text-sm text-slate-500 hover:text-primary flex items-center gap-1">
+          <i class="ti ti-logout"></i> Đăng xuất
+        </button>
+      </header>
+
+      <main class="flex-1 overflow-y-auto p-8">
+        <h1 class="text-2xl font-display font-medium text-slate-900 mb-1">Tổng quan</h1>
+        <p class="text-slate-500 mb-6">Chọn một mục bên trái để bắt đầu chỉnh sửa nội dung website.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a href="./pages/hero.html" class="glass-card rounded-xl p-5 hover:shadow-md transition-shadow">
+            <i class="ti ti-file text-2xl text-primary mb-2"></i>
+            <p class="font-display font-medium text-slate-900">Hero Section</p>
+            <p class="text-sm text-slate-500 mt-1">Chỉnh nội dung banner đầu trang chủ.</p>
+          </a>
+          <a href="./pages/header.html" class="glass-card rounded-xl p-5 hover:shadow-md transition-shadow">
+            <i class="ti ti-layout-navbar text-2xl text-primary mb-2"></i>
+            <p class="font-display font-medium text-slate-900">Header</p>
+            <p class="text-sm text-slate-500 mt-1">Logo, menu điều hướng, nút CTA.</p>
+          </a>
+          <a href="./pages/stats.html" class="glass-card rounded-xl p-5 hover:shadow-md transition-shadow">
+            <i class="ti ti-chart-bar text-2xl text-primary mb-2"></i>
+            <p class="font-display font-medium text-slate-900">Thống kê</p>
+            <p class="text-sm text-slate-500 mt-1">Các chỉ số nổi bật (500+ Dự án, 98% hài lòng...).</p>
+          </a>
+          <a href="./pages/cta.html" class="glass-card rounded-xl p-5 hover:shadow-md transition-shadow">
+            <i class="ti ti-bolt text-2xl text-primary mb-2"></i>
+            <p class="font-display font-medium text-slate-900">CTA</p>
+            <p class="text-sm text-slate-500 mt-1">Khối kêu gọi hành động "Sẵn sàng bứt phá doanh số?".</p>
+          </a>
+          <a href="./pages/footer.html" class="glass-card rounded-xl p-5 hover:shadow-md transition-shadow">
+            <i class="ti ti-layout-bottombar text-2xl text-primary mb-2"></i>
+            <p class="font-display font-medium text-slate-900">Footer</p>
+            <p class="text-sm text-slate-500 mt-1">Mô tả, cột liên kết, thông tin liên hệ, mạng xã hội.</p>
+          </a>
+          <a href="./pages/services.html" class="glass-card rounded-xl p-5 hover:shadow-md transition-shadow">
+            <i class="ti ti-briefcase text-2xl text-primary mb-2"></i>
+            <p class="font-display font-medium text-slate-900">Dịch vụ</p>
+            <p class="text-sm text-slate-500 mt-1">Danh sách dịch vụ hiển thị trên trang chủ.</p>
+          </a>
+          <a href="./pages/pricing.html" class="glass-card rounded-xl p-5 hover:shadow-md transition-shadow">
+            <i class="ti ti-tag text-2xl text-primary mb-2"></i>
+            <p class="font-display font-medium text-slate-900">Bảng giá</p>
+            <p class="text-sm text-slate-500 mt-1">Các gói giá và tính năng đi kèm.</p>
+          </a>
+          <a href="./pages/workflow.html" class="glass-card rounded-xl p-5 hover:shadow-md transition-shadow">
+            <i class="ti ti-git-branch text-2xl text-primary mb-2"></i>
+            <p class="font-display font-medium text-slate-900">Quy trình</p>
+            <p class="text-sm text-slate-500 mt-1">Các bước làm việc với khách hàng.</p>
+          </a>
+          <div class="glass-card rounded-xl p-5 opacity-60">
+            <i class="ti ti-folder text-2xl text-primary mb-2"></i>
+            <p class="font-display font-medium text-slate-900">Dự án, Blog, Media...</p>
+            <p class="text-sm text-slate-500 mt-1">Sắp ra mắt — nhóm quản lý danh sách nhiều bản ghi.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script type="module">
+    import { requireAuth, logout } from "./js/auth-guard.js";
+    import { renderSidebar } from "./js/sidebar.js";
+
+    renderSidebar("dashboard");
+
+    requireAuth({
+      loginPath: "./login.html",
+      onReady: (user) => {
+        document.getElementById("user-email").textContent = user.email;
+      },
+    });
+
+    document.getElementById("logout-btn").addEventListener("click", async () => {
+      await logout();
+      window.location.href = "./login.html";
+    });
+  </script>
+</body>
+</html>
