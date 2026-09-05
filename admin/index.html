@@ -25,9 +25,10 @@
           <p class="text-sm text-slate-400">Xin chào,</p>
           <p class="font-display font-medium text-slate-900" id="user-email">—</p>
         </div>
-        <button id="logout-btn" class="text-sm text-slate-500 hover:text-primary flex items-center gap-1">
-          <i class="ti ti-logout"></i> Đăng xuất
-        </button>
+        <a href="https://tungit04315.github.io/neowave.vn/" target="_blank" rel="noopener noreferrer"
+          class="text-sm text-slate-500 hover:text-primary flex items-center gap-1">
+          <i class="ti ti-external-link"></i> Xem trang website
+        </a>
       </header>
 
       <main class="flex-1 overflow-y-auto p-8">
@@ -96,11 +97,6 @@
       onReady: (user) => {
         document.getElementById("user-email").textContent = user.email;
       },
-    });
-
-    document.getElementById("logout-btn").addEventListener("click", async () => {
-      await logout();
-      window.location.href = "./login.html";
     });
   </script>
 </body>
