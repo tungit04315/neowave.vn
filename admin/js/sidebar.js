@@ -90,6 +90,19 @@ export function renderSidebar(activeKey, base = "") {
     <div class="mt-auto p-3 rounded-xl glass-card">
       <p class="text-sm font-medium text-slate-800 mb-1">Cần hỗ trợ?</p>
       <a href="#" class="text-xs text-primary font-medium">Tài liệu hướng dẫn →</a>
-    </div>
+    <button id="sidebar-logout-btn"
+      class="w-full mt-3 flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-slate-500 hover:bg-slate-100 hover:text-primary transition-colors">
+      <i class="ti ti-logout text-lg"></i>
+      <span>Đăng xuất</span>
+    </button>
   `;
+
+  const logoutBtn = document.getElementById("sidebar-logout-btn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+      const { logout } = await import(new URL("./auth-guard.js", import.meta.url));
+      await logout();
+      window.location.href = `${base}login.html`;
+    });
+  }
 }
