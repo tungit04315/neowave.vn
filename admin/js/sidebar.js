@@ -18,6 +18,7 @@ const MENU = [
       { key: "stats", label: "Thống kê", icon: "ti-chart-bar", href: "pages/stats.html" },
       { key: "cta", label: "CTA (kêu gọi hành động)", icon: "ti-bolt", href: "pages/cta.html" },
       { key: "footer", label: "Footer", icon: "ti-layout-bottombar", href: "pages/footer.html" },
+      { key: "contact-widget", label: "Nút liên hệ nổi", icon: "ti-message-circle", href: "pages/contact-widget.html" },
     ],
   },
   {
